@@ -1,0 +1,846 @@
+Importing model and scenario tree files
+Importing module=C:/Users/user/Dropbox (AIenergy)/Dropbox_sini/SINI_Research/Electric Vehicle Research/Subject 2_EV pattern&Scenario tree/Jeet_Old/Code/OPT4_ Trans0_6.py
+Module successfully loaded
+Time to import model and scenario tree structure files=0.45 seconds
+Scenario Tree Detail
+----------------------------------------------------
+Tree Nodes:
+
+	Name=N1
+	Stage=SecondStage
+	Parent=RootNode
+	Conditional probability=1.0000
+	Children:
+		N1_1
+	Scenarios:
+		S1
+
+	Name=N1_1
+	Stage=ThirdStage
+	Parent=N1
+	Conditional probability=1.0000
+	Children:
+		N1_1_1
+	Scenarios:
+		S1
+
+	Name=N1_1_1
+	Stage=FourthStage
+	Parent=N1_1
+	Conditional probability=1.0000
+	Children:
+		None
+	Scenarios:
+		S1
+
+	Name=RootNode
+	Stage=FirstStage
+	Parent=None
+	Conditional probability=1.0000
+	Children:
+		N1
+	Scenarios:
+		S1
+
+----------------------------------------------------
+Stages:
+	Name=FirstStage
+	Tree Nodes: 
+		RootNode
+	Variables: 
+		 C : [*,1] 
+		 Power_Equal : [*,1] 
+		 bin : [*,1] 
+		 dec_c : [*,1] 
+		 dec_d : [*,1] 
+		 f : [*,1] 
+		 m_rest : [*,1] 
+		 p_rest : [*,1] 
+		 pm : [*,1] 
+		 pp : [*,1] 
+	Cost Variable: 
+		FirstStageCost
+
+	Name=FourthStage
+	Tree Nodes: 
+		N1_1_1
+	Variables: 
+		 C : [*,4] 
+		 Power_Equal : [*,4] 
+		 bin : [*,4] 
+		 dec_c : [*,4] 
+		 dec_d : [*,4] 
+		 f : [*,4] 
+		 m_rest : [*,4] 
+		 p_rest : [*,4] 
+		 pm : [*,4] 
+		 pp : [*,4] 
+	Cost Variable: 
+		FourthStageCost
+
+	Name=SecondStage
+	Tree Nodes: 
+		N1
+	Variables: 
+		 C : [*,2] 
+		 Power_Equal : [*,2] 
+		 bin : [*,2] 
+		 dec_c : [*,2] 
+		 dec_d : [*,2] 
+		 f : [*,2] 
+		 m_rest : [*,2] 
+		 p_rest : [*,2] 
+		 pm : [*,2] 
+		 pp : [*,2] 
+	Cost Variable: 
+		SecondStageCost
+
+	Name=ThirdStage
+	Tree Nodes: 
+		N1_1
+	Variables: 
+		 C : [*,3] 
+		 Power_Equal : [*,3] 
+		 bin : [*,3] 
+		 dec_c : [*,3] 
+		 dec_d : [*,3] 
+		 f : [*,3] 
+		 m_rest : [*,3] 
+		 p_rest : [*,3] 
+		 pm : [*,3] 
+		 pp : [*,3] 
+	Cost Variable: 
+		ThirdStageCost
+
+----------------------------------------------------
+Scenarios:
+	Name=S1
+	Probability=1.0000
+	Leaf node=N1_1_1
+	Tree node sequence:
+		RootNode
+		N1
+		N1_1
+		N1_1_1
+
+----------------------------------------------------
+Scenario tree is valid!
+Node-based instance initialization enabled
+Creating instance for scenario=S1
+Node data for scenario=S1 partially loading from file=C:/Users/user/Dropbox (AIenergy)/Dropbox_sini/SINI_Research/Electric Vehicle Research/Subject 2_EV pattern&Scenario tree/Jeet_Old/Code/Single_Scena\RootNode.dat
+Node data for scenario=S1 partially loading from file=C:/Users/user/Dropbox (AIenergy)/Dropbox_sini/SINI_Research/Electric Vehicle Research/Subject 2_EV pattern&Scenario tree/Jeet_Old/Code/Single_Scena\N1.dat
+Node data for scenario=S1 partially loading from file=C:/Users/user/Dropbox (AIenergy)/Dropbox_sini/SINI_Research/Electric Vehicle Research/Subject 2_EV pattern&Scenario tree/Jeet_Old/Code/Single_Scena\N1_1.dat
+Node data for scenario=S1 partially loading from file=C:/Users/user/Dropbox (AIenergy)/Dropbox_sini/SINI_Research/Electric Vehicle Research/Subject 2_EV pattern&Scenario tree/Jeet_Old/Code/Single_Scena\N1_1_1.dat
+Time to construct scenario instances=0.06 seconds
+Time link scenario tree with instances=0.00 seconds
+Constructing solver manager of type=serial
+Constructing solver type=cplex
+Initializing scenario sub-problem solver with options=['threads=1']
+PH solver configuration: 
+   Max iterations=100
+   Async mode=False
+   Async buffer length=1
+   Default global rho=1.0
+   Over-relaxation enabled=False
+   Sub-problem solver type='cplex'
+   Keep solver files? False
+   Output solver results? False
+   Output solver log? False
+   Output times? False
+Initializing PH
+
+Invoking pre-initialization PH plugins
+Creating weight, average, and rho parameter vectors for scenario instances
+Creating deterministic SymbolMaps for scenario instances
+PH successfully created model instances for all scenarios
+PH is successfully initialized
+Invoking post-initialization PH plugins
+Starting PH
+
+Initiating PH iteration=0
+------------------------------------------------
+Starting PH iteration 0 solves
+Queuing solve for scenario=S1
+Waiting for scenario sub-problem solves
+Results obtained for scenario=S1
+Successfully loaded solution for scenario=S1 - waiting on 0 more
+Successfully completed PH iteration 0 solves
+- solution statistics:
+
+  Scenario    Cost                 Objective            Objective Gap             Solution Status
+  S1          -57058.6599          -57058.6599          0.0165                            optimal
+
+Total number of non-stale discrete instance variables=12
+Total number of non-stale continuous instance variables=105
+Variable values following scenario solves:
+   Stage: FirstStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [2,1]	Values:      176.5663    Max-Min:        0.0000    Avg:      176.5663
+
+         Index: [3,1]	Values:      139.2834    Max-Min:        0.0000    Avg:      139.2834
+
+         Index: [4,1]	Values:     4266.8282    Max-Min:        0.0000    Avg:     4266.8282
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: bin
+         Index: [4,1]	Values:        1.0000    Max-Min:        0.0000    Avg:        1.0000
+
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [2,1]	Values:       11.0751    Max-Min:        0.0000    Avg:       11.0751
+
+         Index: [3,1]	Values:       19.3396    Max-Min:        0.0000    Avg:       19.3396
+
+         Index: [4,1]	Values:      255.8929    Max-Min:        0.0000    Avg:      255.8929
+
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [2,1]	Values:       15.0000    Max-Min:        0.0000    Avg:       15.0000
+
+         Index: [3,1]	Values:       27.8104    Max-Min:        0.0000    Avg:       27.8104
+
+         Index: [4,1]	Values:      417.0905    Max-Min:        0.0000    Avg:      417.0905
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: m_rest
+         Index: [2,1]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+      Variable: p_rest
+         Index: [2,1]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+         Index: [4,1]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Cost Variable: FirstStageCost
+         Tree Node: RootNode      (Scenarios:  S1 )
+         Values:       -0.0071    Max-Min:        0.0000   Avg:       -0.0071
+   Stage: SecondStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [2,2]	Values:      186.6400    Max-Min:        0.0000    Avg:      186.6400
+
+         Index: [3,2]	Values:      408.3787    Max-Min:        0.0000    Avg:      408.3787
+
+         Index: [4,2]	Values:    14766.2431    Max-Min:        0.0000    Avg:    14766.2431
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: bin
+         Index: [4,2]	Values:        1.0000    Max-Min:        0.0000    Avg:        1.0000
+
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [2,2]	Values:       11.0751    Max-Min:        0.0000    Avg:       11.0751
+
+         Index: [3,2]	Values:       43.1006    Max-Min:        0.0000    Avg:       43.1006
+
+         Index: [4,2]	Values:     1340.1420    Max-Min:        0.0000    Avg:     1340.1420
+
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [2,2]	Values:       15.0000    Max-Min:        0.0000    Avg:       15.0000
+
+         Index: [3,2]	Values:       42.3067    Max-Min:        0.0000    Avg:       42.3067
+
+         Index: [4,2]	Values:     1071.3358    Max-Min:        0.0000    Avg:     1071.3358
+
+          (Scenarios: S1  )
+      Variable: f
+         Index: [2,2]	Values:       10.0737    Max-Min:        0.0000    Avg:       10.0737
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: p_rest
+         Index: [4,2]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Cost Variable: SecondStageCost
+         Tree Node: N1      (Scenarios:  S1 )
+         Values:     -405.4355    Max-Min:        0.0000   Avg:     -405.4355
+   Stage: ThirdStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [3,3]	Values:      459.8100    Max-Min:        0.0000    Avg:      459.8100
+
+         Index: [4,3]	Values:    29282.4779    Max-Min:        0.0000    Avg:    29282.4779
+
+          (Scenarios: S1  )
+      Variable: Power_Equal
+         Index: [4,3]	Values:        0.0000    Max-Min:        0.0000    Avg:       -0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [3,3]	Values:       43.1006    Max-Min:        0.0000    Avg:       43.1006
+
+         Index: [4,3]	Values:     2578.9895    Max-Min:        0.0000    Avg:     2578.9895
+
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [3,3]	Values:       42.3067    Max-Min:        0.0000    Avg:       42.3067
+
+         Index: [4,3]	Values:     1890.0494    Max-Min:        0.0000    Avg:     1890.0494
+
+          (Scenarios: S1  )
+      Variable: f
+         Index: [3,3]	Values:       51.4313    Max-Min:        0.0000    Avg:       51.4313
+
+         Index: [4,3]	Values:     1522.2659    Max-Min:        0.0000    Avg:     1522.2659
+
+          (Scenarios: S1  )
+      Variable: m_rest
+         Index: [4,3]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: pm
+         Index: [4,3]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+      Cost Variable: ThirdStageCost
+         Tree Node: N1_1      (Scenarios:  S1 )
+         Values:   -56653.1629    Max-Min:        0.0000   Avg:   -56653.1629
+Number of discrete variables fixed=0 (total=12)
+Number of continuous variables fixed=0 (total=105)
+First stage cost avg=     -0.0071 Max-Min=    0.00
+Converger=Normalized term diff value is         0.0000 - threshold reached=True
+Cumulative run-time=0.11 seconds
+
+Initiating PH iteration=1
+Variable averages and weights prior to scenario solves:
+   Stage: FirstStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [2,1]         Weights:        0.0000   Average:      176.5663
+         Index: [3,1]         Weights:        0.0000   Average:      139.2834
+         Index: [4,1]         Weights:        0.0000   Average:     4266.8282
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: bin
+         Index: [4,1]         Weights:        0.0000   Average:        1.0000
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [2,1]         Weights:        0.0000   Average:       11.0751
+         Index: [3,1]         Weights:        0.0000   Average:       19.3396
+         Index: [4,1]         Weights:        0.0000   Average:      255.8929
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [2,1]         Weights:        0.0000   Average:       15.0000
+         Index: [3,1]         Weights:        0.0000   Average:       27.8104
+         Index: [4,1]         Weights:        0.0000   Average:      417.0905
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: m_rest
+         Index: [2,1]         Weights:        0.0000   Average:        0.0000
+          (Scenarios: S1  )
+      Variable: p_rest
+         Index: [2,1]         Weights:        0.0000   Average:        0.0000
+         Index: [4,1]         Weights:        0.0000   Average:        0.0000
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Cost Variable: FirstStageCost
+         Tree Node: RootNode      (Scenarios:  S1 )
+         Values:       -0.0071    Max-Min:        0.0000   Avg:       -0.0071
+   Stage: SecondStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [2,2]         Weights:        0.0000   Average:      186.6400
+         Index: [3,2]         Weights:        0.0000   Average:      408.3787
+         Index: [4,2]         Weights:        0.0000   Average:    14766.2431
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: bin
+         Index: [4,2]         Weights:        0.0000   Average:        1.0000
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [2,2]         Weights:        0.0000   Average:       11.0751
+         Index: [3,2]         Weights:        0.0000   Average:       43.1006
+         Index: [4,2]         Weights:        0.0000   Average:     1340.1420
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [2,2]         Weights:        0.0000   Average:       15.0000
+         Index: [3,2]         Weights:        0.0000   Average:       42.3067
+         Index: [4,2]         Weights:        0.0000   Average:     1071.3358
+          (Scenarios: S1  )
+      Variable: f
+         Index: [2,2]         Weights:        0.0000   Average:       10.0737
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: p_rest
+         Index: [4,2]         Weights:        0.0000   Average:        0.0000
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Cost Variable: SecondStageCost
+         Tree Node: N1      (Scenarios:  S1 )
+         Values:     -405.4355    Max-Min:        0.0000   Avg:     -405.4355
+   Stage: ThirdStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [3,3]         Weights:        0.0000   Average:      459.8100
+         Index: [4,3]         Weights:        0.0000   Average:    29282.4779
+          (Scenarios: S1  )
+      Variable: Power_Equal
+         Index: [4,3]         Weights:        0.0000   Average:       -0.0000
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [3,3]         Weights:        0.0000   Average:       43.1006
+         Index: [4,3]         Weights:        0.0000   Average:     2578.9895
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [3,3]         Weights:        0.0000   Average:       42.3067
+         Index: [4,3]         Weights:        0.0000   Average:     1890.0494
+          (Scenarios: S1  )
+      Variable: f
+         Index: [3,3]         Weights:        0.0000   Average:       51.4313
+         Index: [4,3]         Weights:        0.0000   Average:     1522.2659
+          (Scenarios: S1  )
+      Variable: m_rest
+         Index: [4,3]         Weights:        0.0000   Average:        0.0000
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: pm
+         Index: [4,3]         Weights:        0.0000   Average:        0.0000
+          (Scenarios: S1  )
+      Cost Variable: ThirdStageCost
+         Tree Node: N1_1      (Scenarios:  S1 )
+         Values:   -56653.1629    Max-Min:        0.0000   Avg:   -56653.1629
+------------------------------------------------
+Starting PH iteration 1 solves
+Queuing solve for scenario=S1
+Waiting for scenario sub-problem solves
+Results obtained for scenario=S1
+Successfully loaded solution for scenario=S1 - waiting on 0 more
+Successfully completed PH iteration 1 solves
+- solution statistics:
+
+  Scenario    Cost                 Objective            Objective Gap             Solution Status
+  S1          -57058.6598          -57058.6598          0.0000                            optimal
+
+Variable values following scenario solves:
+   Stage: FirstStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [2,1]	Values:      176.5663    Max-Min:        0.0000    Avg:      176.5663
+
+         Index: [3,1]	Values:      139.2834    Max-Min:        0.0000    Avg:      139.2834
+
+         Index: [4,1]	Values:     4266.8282    Max-Min:        0.0000    Avg:     4266.8282
+
+          (Scenarios: S1  )
+      Variable: Power_Equal
+         Index: [4,1]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+      Variable: bin
+         Index: [4,1]	Values:        1.0000    Max-Min:        0.0000    Avg:        1.0000
+
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [2,1]	Values:       11.0751    Max-Min:        0.0000    Avg:       11.0751
+
+         Index: [3,1]	Values:       19.3396    Max-Min:        0.0000    Avg:       19.3396
+
+         Index: [4,1]	Values:      255.8929    Max-Min:        0.0000    Avg:      255.8929
+
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [2,1]	Values:       15.0000    Max-Min:        0.0000    Avg:       15.0000
+
+         Index: [3,1]	Values:       27.8104    Max-Min:        0.0000    Avg:       27.8104
+
+         Index: [4,1]	Values:      417.0905    Max-Min:        0.0000    Avg:      417.0905
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: p_rest
+         Index: [4,1]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: pp
+         Index: [4,1]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+      Cost Variable: FirstStageCost
+         Tree Node: RootNode      (Scenarios:  S1 )
+         Values:       -0.0067    Max-Min:        0.0000   Avg:       -0.0067
+   Stage: SecondStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [2,2]	Values:      186.6400    Max-Min:        0.0000    Avg:      186.6400
+
+         Index: [3,2]	Values:      408.3787    Max-Min:        0.0000    Avg:      408.3787
+
+         Index: [4,2]	Values:    14766.2431    Max-Min:        0.0000    Avg:    14766.2431
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: bin
+         Index: [4,2]	Values:        1.0000    Max-Min:        0.0000    Avg:        1.0000
+
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [2,2]	Values:       11.0751    Max-Min:        0.0000    Avg:       11.0751
+
+         Index: [3,2]	Values:       43.1006    Max-Min:        0.0000    Avg:       43.1006
+
+         Index: [4,2]	Values:     1340.1420    Max-Min:        0.0000    Avg:     1340.1420
+
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [2,2]	Values:       15.0000    Max-Min:        0.0000    Avg:       15.0000
+
+         Index: [3,2]	Values:       42.3067    Max-Min:        0.0000    Avg:       42.3067
+
+         Index: [4,2]	Values:     1071.3358    Max-Min:        0.0000    Avg:     1071.3358
+
+          (Scenarios: S1  )
+      Variable: f
+         Index: [2,2]	Values:       10.0737    Max-Min:        0.0000    Avg:       10.0737
+
+          (Scenarios: S1  )
+      Variable: m_rest
+         Index: [4,2]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+      Variable: p_rest
+         Index: [4,2]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Cost Variable: SecondStageCost
+         Tree Node: N1      (Scenarios:  S1 )
+         Values:     -405.4358    Max-Min:        0.0000   Avg:     -405.4358
+   Stage: ThirdStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [3,3]	Values:      459.8100    Max-Min:        0.0000    Avg:      459.8100
+
+         Index: [4,3]	Values:    29282.4779    Max-Min:        0.0000    Avg:    29282.4779
+
+          (Scenarios: S1  )
+      Variable: Power_Equal
+         Index: [4,3]	Values:        0.0000    Max-Min:        0.0000    Avg:       -0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [3,3]	Values:       43.1006    Max-Min:        0.0000    Avg:       43.1006
+
+         Index: [4,3]	Values:     2578.9895    Max-Min:        0.0000    Avg:     2578.9895
+
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [3,3]	Values:       42.3067    Max-Min:        0.0000    Avg:       42.3067
+
+         Index: [4,3]	Values:     1890.0494    Max-Min:        0.0000    Avg:     1890.0494
+
+          (Scenarios: S1  )
+      Variable: f
+         Index: [3,3]	Values:       51.4313    Max-Min:        0.0000    Avg:       51.4313
+
+         Index: [4,3]	Values:     1522.2659    Max-Min:        0.0000    Avg:     1522.2659
+
+          (Scenarios: S1  )
+      Variable: m_rest
+         Index: [4,3]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: pm
+         Index: [4,3]	Values:        0.0000    Max-Min:        0.0000    Avg:        0.0000
+
+          (Scenarios: S1  )
+      Cost Variable: ThirdStageCost
+         Tree Node: N1_1      (Scenarios:  S1 )
+         Values:   -56653.1629    Max-Min:        0.0000   Avg:   -56653.1629
+Number of discrete variables fixed=0 (total=12)
+Number of continuous variables fixed=0 (total=105)
+First stage cost avg=     -0.0067 Max-Min=    0.00
+Converger=Normalized term diff value is         0.0000 - threshold reached=True
+Cumulative run-time=0.24 seconds
+
+Number of discrete variables fixed before final plugin calls=0 (total=12)
+Number of continuous variables fixed before final plugin calls=0 (total=105)
+PH complete
+
+Convergence history:
+Converger=Normalized term diff
+Iteration    Metric Value
+     0               0.0000
+     1               0.0000
+
+
+Final number of discrete variables fixed=0 (total=12)
+Final number of continuous variables fixed=0 (total=105)
+
+Computing objective inner bound at xhat solution
+Queuing solve for scenario=S1
+Waiting for scenario sub-problem solves
+Results obtained for scenario=S1
+# ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Lower bound: -inf
+  Upper bound: inf
+  Number of objectives: 1
+  Number of constraints: 366
+  Number of variables: 299
+  Number of nonzeros: 969
+  Sense: unknown
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Status: ok
+  User time: 0.0
+  Termination condition: infeasible
+  Termination message: MIP - Integer infeasible.
+  Error rc: 0
+  Time: 0.023013591766357422
+Solve failed for scenario=S1; no solutions generated
+
+Problem: 
+- Lower bound: -inf
+  Upper bound: inf
+  Number of objectives: 1
+  Number of constraints: 366
+  Number of variables: 299
+  Number of nonzeros: 969
+  Sense: unknown
+Solver: 
+- Status: ok
+  User time: 0.0
+  Termination condition: infeasible
+  Termination message: MIP - Integer infeasible.
+  Error rc: 0
+  Time: 0.023013591766357422
+
+At least one sub-problem solve time was undefined - skipping timing statistics
+At least one sub-problem solve time was undefined - skipping timing statistics
+ ** At least one sub-problem failed to solve! ** 
+ Failed sub-problems:
+   S1
+
+Failed to compute bound at xhat due to one or more solve failures. Restoring PH to solution at final iteration.
+Generating scenario tree solution from scenario averages
+
+Scenario tree variable values:
+
+   Stage: FirstStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [2,1]	Values:      176.5663
+
+         Index: [3,1]	Values:      139.2834
+
+         Index: [4,1]	Values:     4266.8282
+
+          (Scenarios: S1  )
+      Variable: Power_Equal
+         Index: [4,1]	Values:        0.0000
+
+          (Scenarios: S1  )
+      Variable: bin
+         Index: [4,1]	Values:        1.0000
+
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [2,1]	Values:       11.0751
+
+         Index: [3,1]	Values:       19.3396
+
+         Index: [4,1]	Values:      255.8929
+
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [2,1]	Values:       15.0000
+
+         Index: [3,1]	Values:       27.8104
+
+         Index: [4,1]	Values:      417.0905
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: p_rest
+         Index: [4,1]	Values:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: pp
+         Index: [4,1]	Values:        0.0000
+
+      Cost Variable: FirstStageCost
+         Tree Node: RootNode      (Scenarios:  S1 )
+         Values:       -0.0067    Max-Min:        0.0000   Avg:       -0.0067
+   Stage: SecondStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [2,2]	Values:      186.6400
+
+         Index: [3,2]	Values:      408.3787
+
+         Index: [4,2]	Values:    14766.2431
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: bin
+         Index: [4,2]	Values:        1.0000
+
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [2,2]	Values:       11.0751
+
+         Index: [3,2]	Values:       43.1006
+
+         Index: [4,2]	Values:     1340.1420
+
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [2,2]	Values:       15.0000
+
+         Index: [3,2]	Values:       42.3067
+
+         Index: [4,2]	Values:     1071.3358
+
+          (Scenarios: S1  )
+      Variable: f
+         Index: [2,2]	Values:       10.0737
+
+          (Scenarios: S1  )
+      Variable: m_rest
+         Index: [4,2]	Values:        0.0000
+
+          (Scenarios: S1  )
+      Variable: p_rest
+         Index: [4,2]	Values:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Cost Variable: SecondStageCost
+         Tree Node: N1      (Scenarios:  S1 )
+         Values:     -405.4358    Max-Min:        0.0000   Avg:     -405.4358
+   Stage: ThirdStage
+          (Scenarios: S1  )
+      Variable: C
+         Index: [3,3]	Values:      459.8100
+
+         Index: [4,3]	Values:    29282.4779
+
+          (Scenarios: S1  )
+      Variable: Power_Equal
+         Index: [4,3]	Values:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: dec_c
+         Index: [3,3]	Values:       43.1006
+
+         Index: [4,3]	Values:     2578.9895
+
+          (Scenarios: S1  )
+      Variable: dec_d
+         Index: [3,3]	Values:       42.3067
+
+         Index: [4,3]	Values:     1890.0494
+
+          (Scenarios: S1  )
+      Variable: f
+         Index: [3,3]	Values:       51.4313
+
+         Index: [4,3]	Values:     1522.2659
+
+          (Scenarios: S1  )
+      Variable: m_rest
+         Index: [4,3]	Values:        0.0000
+
+          (Scenarios: S1  )
+          (Scenarios: S1  )
+      Variable: pm
+         Index: [4,3]	Values:        0.0000
+
+          (Scenarios: S1  )
+      Cost Variable: ThirdStageCost
+         Tree Node: N1_1      (Scenarios:  S1 )
+         Values:   -56653.1629    Max-Min:        0.0000   Avg:   -56653.1629
+Scenario tree costs:
+Scenario Tree Costs
+----------------------------------------------------
+Tree Nodes:
+
+	Name=N1
+	Stage=SecondStage
+	Parent=RootNode
+	Conditional probability=1.0000
+	Children:
+		N1_1
+	Scenarios:
+		S1
+	Expected cost of (sub)tree rooted at node=-57058.6531
+
+	Name=N1_1
+	Stage=ThirdStage
+	Parent=N1
+	Conditional probability=1.0000
+	Children:
+		N1_1_1
+	Scenarios:
+		S1
+	Expected cost of (sub)tree rooted at node=-56653.2173
+
+	Name=N1_1_1
+	Stage=FourthStage
+	Parent=N1_1
+	Conditional probability=1.0000
+	Children:
+		None
+	Scenarios:
+		S1
+	Expected cost of (sub)tree rooted at node=   -0.0544
+
+	Name=RootNode
+	Stage=FirstStage
+	Parent=None
+	Conditional probability=1.0000
+	Children:
+		N1
+	Scenarios:
+		S1
+	Expected cost of (sub)tree rooted at node=-57058.6598
+
+----------------------------------------------------
+Scenarios:
+
+	Name=S1
+	Probability=1.0000
+	Leaf Node=N1_1_1
+	Tree node sequence:
+		RootNode
+		N1
+		N1_1
+		N1_1_1
+	Stage=          FirstStage     Cost=   -0.0067
+	Stage=         SecondStage     Cost= -405.4358
+	Stage=          ThirdStage     Cost=-56653.1629
+	Stage=         FourthStage     Cost=   -0.0544
+	Total scenario cost=-57058.6598
+
+----------------------------------------------------
+
+
+Total PH execution time=0.32 seconds
+
+
+Total execution time=0.84 seconds
