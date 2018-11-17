@@ -50,5 +50,7 @@ runph -m runph -m "OPT4_ Trans0_6.py" -i "ScenarioTree_Temp\Nodedata (7)" --defa
 
 ** Reltated Command 
 --create-random-bundles=10  create 10 random bundle, obviating the need to specify bundle options
---create-random-bundles=10
+--scenario-tree-seed=   allows the user to specify the random seed used for bundle formation so that experiments are repeatable.
+ex)
+create-random-bundles=10 --scenario-tree-seed=7734
 **
